@@ -5,20 +5,26 @@ using namespace std;
 
 int main() {
     bool isIncorrect;
-    double x, D, b, A, S;
+    double x, p, K, D, C, B, A, Y;
     do {
-        cout << "Введите занчение x и D: ";
-        cin >> x >> D;
+        cout << "Введите значение x, p, K, D, C: ";
+        cin >> x >> p >> K >> D >> C;
         isIncorrect = false;
         if (cin.fail()) {
-            cout << "Ошибка ввода!!! Попробуйте еще раз!" << endl;
+            cout << "*Ошибка ввода!!! Попробуйте еще раз!" << endl;
             cin.clear();
             while(cin.get() != '\n');
             isIncorrect = true;
+            continue;
+        }
+        A = x + sin(p);
+        if (A == 0) {
+            cout << "*Ошибка: знаменатель не может быть равен нулю!!!"<< '\n' << "Введите другое значение x и(или) p!" << endl;
+            isIncorrect = true;
         }
     } while (isIncorrect);
-    b = x + D;
-    A = D * x / b;
-    S = (pow(A, 2) + b * cos(x)) / (pow(D, 3) + (A + D - b));
-    cout << "Соотношение, Вариант 1, S = " << S << endl;
+    B = exp(K);
+    Y = 1 + pow(K, 2) / (2 * A * B) - B + D * C;
+    cout << "Соотношение, Вариант 2, Y = " << Y << endl;
+    return 0;
 }
