@@ -5,10 +5,10 @@ using namespace std;
 
 int main() {
     bool isIncorrect;
-    double x, p, K, D, C, B, A, Y;
+    double x, p, n, K, D, B, C, Q;
     do {
-        cout << "Введите занчение x, p, K, D, C: ";
-        cin >> x >> p >> K >> D >> C;
+        cout << "Введите занчение x, p, n, K, D: ";
+        cin >> x >> p >> n >> K >> D;
         isIncorrect = false;
         if (cin.fail()) {
             cout << "Ошибка ввода!!! Попробуйте еще раз!" << endl;
@@ -17,9 +17,9 @@ int main() {
             isIncorrect = true;
         }
     } while (isIncorrect);
-    A = x + sin(p);
-    B = exp(K);
-    Y = 1 + pow(K, 2) / 2 * A * B - B + D * C;
-    cout << "Соотношение, Вариант 2, Y = " << Y << endl;
+    C = p - n;
+    B = cos(x);
+    Q = pow(B, 2) / (K * D) + B * pow(C, 3);
+    cout << "Соотношение, Вариант 3, Q = " << Q << endl;
     return 0;
 }
